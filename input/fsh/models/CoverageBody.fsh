@@ -1,5 +1,5 @@
 // -------------------------------------------------------------------------------				
-//  Logical Model				Coverage.fsh
+//  Logical Model				CoverageBody.fsh
 // -------------------------------------------------------------------------------				
 Logical: LabOrderCoverageCz				
 Id: Coverage
