@@ -1,7 +1,7 @@
 Logical: AuthorOrderCz
 Id: AuthorCz
-Title: "A.1.5 - Author (by whom the Imaging order was/were authored). Multiple authors could be provided."
-Description: """Author (by whom the Imaging order was/were authored). Multiple authors could be provided."""
+Title: "A.1.5 - Author (by whom the Laboratory order was/were authored). Multiple authors could be provided."
+Description: """Author (by whom the Laboratory order was/were authored). Multiple authors could be provided."""
 
 * insert SetFmmandStatusRule ( 1, draft )
 
