@@ -47,7 +47,7 @@ Description: "Clinical document used to represent a Laboratory Order for the sco
 
 
 * author MS
-* author only Reference(PractitionerRole or Device)
+* author only Reference(CZ_PractitionerCore or CZ_DeviceObserver)
   * ^short = "Who and/or what authored the composition"
 
 * date MS
