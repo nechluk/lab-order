@@ -1,38 +1,50 @@
-### Introduction 
-This implementation guide is based on [FHIR version R4]. It defines the requirements for creating a structured electronic laboratory order in the Czech national context. It builds upon current Czech data standards, while also aligning with emerging processes that move toward a European format for the exchange of electronic health records.
+{% include variable-definitions.md %}
 
-Its primary goal is to specify the content elements and preferred structure of a digital laboratory order. By providing a core information model and dataset, it ensures consistency in how lab orders are represented and exchanged electronically in the Czech Republic.
+### Introduction
 
-This guide focuses on formalized, digital orders transmitted online and leverages recognized national standards (DS4 version 04.27 and higher) and HL7 FHIR. It does not address the technical details of infrastructure services such as central repositories, beyond listing essential requirements they must fulfill if implemented.
+This implementation guide is based on [FHIR version R4](https://hl7.org/fhir/R4/). Specify a set of rules that will be used for HL7 FHIR to define how to represent Imaging Order in the Czech national context, in line with European eHN guidelines.
+
+Its main objective is to define the content components and the preferred structure to be used to construct a imaging order. The purpose of this standard is to define the representation of the imaging order as a patient's medical record for the purpose of electronic exchange of health information between individuals, healthcare providers and infrastructure in the Czech Republic. 
+
+This guide does not describe how to exchange this message.
 
 ### Scope
-- Defines how to represent and structure a laboratory order for electronic exchange.
-- Covers online, digitally formatted lab requests sent to a specific laboratory or to a central repository.
-- Reflects current Czech data standards with an eye toward compatibility with European health information exchange.
-
-This guide does not:
-- Cover offline or paper-based request forms.
-- Describe how to implement a full order-management ecosystem (e.g., selecting providers, transmission methods, or repository administration).
-
 
 This guide is divided into several pages which are listed at the top of each page in the menu bar.
 
-- [Home](index.html): This page provides the introduction and scope for this guide.
-- [Introduction](general-semantics.html): This page provides guidance on using the profile defined in this guide. 
-- [Functional view](functional-view.html): These page contains information about actors and transactions. 
-- [Artifacts](artifacts.html): This page provides a list of the FHIR artifacts defined as part of this implementation guide.
-- [Downloads](downloads.html): This page provides links to downloadable artefacts.
+- [Home](index-en.html): This page provides the introduction, scope short, references, dependencies, cross version analysis and IP statement for this guide.
+- Introduction:
+  - [Scope and content](scope-and-content-en.html): This segment contains general information about Imaging order.
+  - [Background](background-en.html): This segment contains background information about Imaging order. 
+- Functional:
+  - [Use cases](use-cases-en.html): This segment contains information about use cases. 
+  - [Workflow](workflow-en.html): This segment contains information about workflow. 
+  - [Logical models](logical-models-en.html): This segment contains information about logical models. 
+  - [Terminology considerations](terminology-considerations-en.html): This segment contains information about terminology. 
+- Implementation:
+  - [Mapping to profiles](model-map-en.html): This segment contains information about logical model maps to profiles.
+  - [Examples](examples-en.html): This segment contains information about examples.
+  - [Obligations](obligations-en.html): This segment contains information about obligations.
+- About:
+  - [Authors](authors-en.html): This segment contains informaction about authors.
+  - [Downloads](downloads-en.html): This segment contains informaction about downloads.
+  - [Dependencies](dependencies-en.html): This segment contains informaction about dependencies.
+  - [Copyright](copyright-en.html): This segment contains informaction about copyright.
+- [Artifacts](artifacts-en.html): This page provides a list of the FHIR artifacts defined as part of this implementation guide.
 
-#### Included Areas
-- Implementation specification of the electronic lab order, including required data elements and structure.
-- Use of DS4 and HL7 FHIR as the basis for formalizing the lab order content.
-- Requirements for addressing the order to specific laboratories or repositories.
-- High-level constraints for any central repository that may handle these orders.
+### References
 
-#### Excluded Areas
-- Paper-based or unstructured online forms.
-- Central repository design or detailed operational processes (e.g., how repositories store or forward orders).
-- Non-laboratory requests (e.g., imaging or other clinical services).
+The paper form template for an electronic referral is the paper referral form for Examination/Treatment Type Z. The specifications for the content of the paper referral are provided in `příloha č. 1 v části 2 k vyhlášce č. 444/2024 Sb., o zdravotnické dokumentaci, k 19.2.2025`.
+
+* Related specifications:
+  * {{hl7XtEHR}}
+    * This specification has inspired many of the design patterns defined in this IG.
+  * {{czImgOrder}}
+    * This specification has many of together design patterns defined in this IG.
+  * {{czLab}}
+    * This specification has many of together design patterns defined in this IG.
+  * {{czCore}}
+    * Where possible this specification has been aligned with choices made in CZ core.
 
 ### Dependencies
 
