@@ -1,11 +1,12 @@
-Profile: EncounterCz
+Profile: CZ_Encounter
 Parent: Encounter
-Id: EncounterCz
-Title: "Encounter (CZ)"
+Id: cz-encounter
+Title: "Encounter: Lab Order (CZ)"
 Description: "Czech profile for encounter. "
 
 * insert SetFmmandStatusRule ( 0, draft )
 
 * identifier 1..
-* type 0..
-* text 1..
+* status
+* class
+* text

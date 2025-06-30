@@ -12,7 +12,7 @@ This guide does not describe how to exchange this message.
 
 This guide is divided into several pages which are listed at the top of each page in the menu bar.
 
-- [Home](index-en.html): This page provides the introduction, scope short, references, dependencies, cross version analysis and IP statement for this guide.
+- [Home](index.html): This page provides the introduction, scope short, references, dependencies, cross version analysis and IP statement for this guide.
 - Introduction:
   - [Scope and content](scope-and-content-en.html): This segment contains general information about Imaging order.
   - [Background](background-en.html): This segment contains background information about Imaging order. 
@@ -30,7 +30,7 @@ This guide is divided into several pages which are listed at the top of each pag
   - [Downloads](downloads-en.html): This segment contains informaction about downloads.
   - [Dependencies](dependencies-en.html): This segment contains informaction about dependencies.
   - [Copyright](copyright-en.html): This segment contains informaction about copyright.
-- [Artifacts](artifacts-en.html): This page provides a list of the FHIR artifacts defined as part of this implementation guide.
+- [Artifacts](artifacts.html): This page provides a list of the FHIR artifacts defined as part of this implementation guide.
 
 ### References
 

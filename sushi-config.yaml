@@ -65,7 +65,7 @@ pages:
   index.md:
     title: Home
   index-cs.md:
-    title: Home
+    title: Domovská stránka
   scope-and-content-en.md:
     title: Scope and content
   scope-and-content-cs.md:
@@ -172,6 +172,8 @@ parameters:  #see https://confluence.hl7.org/display/FHIR/Implementation+Guide+P
 #  generate-turtle:
 #  html-template:
 #  active-tables: false
+  pin-canonicals: pin-multiples
+  path-expansion-params: '../../expansion-params.json'
   apply-contact: true
   apply-jurisdiction: true
   apply-publisher: true

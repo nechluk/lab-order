@@ -3,7 +3,7 @@
 //==========================
 Profile: CZ_CompositionLabOrder
 Parent: Composition
-Id: CompositionLabOrderCz
+Id: cz-CompositionLabOrder
 Title: "Composition: Laboratory Order (CZ)"
 Description: "Clinical document used to represent a Laboratory Order for the scope of this guide."
 * ^purpose = "Laboratory order bundle is an electronic health record extract containing order of laboratory examination for subject of care, comprising at least the required elements of the lab dataset."
@@ -26,136 +26,105 @@ Description: "Clinical document used to represent a Laboratory Order for the sco
   * ^short = "Status of the Order"
   * ^comment = ""
 
-* subject 1..1 MS
-* subject only Reference(Patient)
+* subject 1..1 
+* subject only Reference(CZ_PatientCore or CZ_PatientAnimal or Group or CZ_LocationCore or Device or CZ_MedicalDevice)
 
-* custodian MS
-* custodian only Reference(Organization)
+* custodian 
+* custodian only Reference(CZ_OrganizationCore)
   * ^short = "Organization that manages the Laboratory Order"
 
-* encounter MS
-* encounter only Reference(Encounter)
+* encounter 
+* encounter only Reference(CZ_Encounter)
   * ^short = "Context that defines the Laboratory Order"
 //  * insert SetPopulateIfKnown
 
-* attester 0..* MS
-//  * insert SetPopulateIfKnown
-  * ^slicing.discriminator[+].type = #value
-  * ^slicing.discriminator[=].path = "$this.mode"
-  * ^slicing.rules = #open
-  * ^slicing.ordered = false
+* author
+* author only Reference(CZ_PractitionerCore or CZ_DeviceObserver or CZ_PractitionerRoleCore)
+  * ^short = "Who and/or what authored the Laboratory order"
 
-
-* author MS
-* author only Reference(CZ_PractitionerCore or CZ_DeviceObserver)
-  * ^short = "Who and/or what authored the composition"
-
-* date MS
+* date
   * ^short = "Date the order was created."
 
-* section MS
-  * ^slicing.discriminator.type = #value
-  * ^slicing.discriminator.path = "code"
-  * ^slicing.rules = #open
-  * ^slicing.ordered = false
-* section.entry MS
-* section.code 1..1 MS  // LOINC code for the section
-* section.title MS
-* section.text MS
+* type from CZ_TypeClinicalEventVs
+
+* category from $DocumentClassValueSet
+
+* section 1..
+* obeys text-or-section
+
+* section ^slicing.discriminator[0].type = #value
+* section ^slicing.discriminator[0].path = "code"
+* section ^slicing.ordered = false
+* section ^slicing.rules = #open
+* section ^short = "Sections composing the Laboratory Order"
+* section ^definition = "The root of the sections that make up the Laboratory Order composition."
+* section.author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or Device or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+
+
 * section contains
-    orderInformation 0..* MS and
-    supportingInformation 1..1 MS and
-    specimen 1..1 MS and
-    serviceRequest 1..1 MS and
-    coverage 0..* MS and
-    appointment 0..1 MS
+    serviceRequest 1..* and
+    clinicalQuestion 1..* and
+    coverage 0..* and
+    appointment 0..1 and
+    attachments 0..*
 
 ///////////////////////////////// ORDER INFORMATION SECTION ///////////////////////////////////////
-* section[orderInformation]
-  * ^short = "Order Information"
-  * ^definition = "This section holds information related to the order for the imaging study."
-  * code = $loinc#100828-3 "Portable medical order administrative information"
-
-  * entry MS
-    * insert SliceElement( #profile, "$this" )
-  * entry contains 
-      order 0..* MS and 
-      orderPlacer 0..1 MS and
-      orderReason 1..1 MS 
-  
-  * entry[order]
-    * ^short = "Order reference"
-    * ^definition = "This entry holds a reference to the order for the Imaging Order."
-  * entry[order] only Reference(ServiceRequest) 
-
-  * entry[orderPlacer]
-    * ^short = "Order Placer"
-    * ^definition = "This entry holds a reference to order placer."
-  * entry[orderPlacer] only Reference(PractitionerRole) 
-
-  * entry[orderReason]
-    * ^short = "Order Reason"
-    * ^definition = "This entry holds a reference to order reason."
-  * entry[orderReason] only Reference(Observation or Condition)
-
-///////////////////////////// SUPPORTING INFORMATION SECTION ////////////////////////////////////
-* section[supportingInformation]
-  * ^short = "Supporting Information"
-  * ^definition = "This section holds additional clinical information about the patient or specimen that may influence the services or their interpretations. This information includes diagnosis, clinical findings and other observations."
-  * code = $loinc#104987-3 "Supporting clinical information"
-
-  * entry MS
-    * insert SliceElement( #profile, "$this" )
-  * entry contains 
-      medicationAdministration 0..* MS and
-      urgentInformation 0..1 MS and
-  // omezeni pohyblivosti pacienta    
-      observation 0..* MS
- 
-  * entry[medicationAdministration]
-    * ^short = "Medication Administration"
-    * ^definition = "This entry holds a reference to the medication."
-  * entry[medicationAdministration] only Reference(MedicationAdministration) 
-
-  * entry[urgentInformation]
-    * ^short = "Urgent information"
-    * ^definition = "This entry holds a reference to the implant."
-  * entry[urgentInformation] only Reference(AllergyIntolerance) 
-
-  * entry[observation]
-    * ^short = "Condition"
-    * ^definition = "This entry holds a reference to the other observation."
-  * entry[observation] only Reference(Observation) 
-
-///////////////////////////////////// SPECIMEN SECTION //////////////////////////////////////////
-* section[specimen]
-  * ^short = "Specimen"
-  * code = $loinc#31208-2 "Specimen"
-  * entry MS
-    * insert SliceElement( #profile, $this )
-  * entry contains 
-      Specimen 0..* MS
-  * entry[Specimen] only Reference(Specimen)
-
-
-//////////////////////////////// SERVICE REQUEST SECTION ////////////////////////////////////////
 * section[serviceRequest]
-  * ^short = "ServiceRequest"
-  * code = $loinc#64286-8 "Diagnostic imaging order"
-  * entry MS
-    * insert SliceElement( #profile, $this )
-  * entry only Reference(ServiceRequest)
+  * ^short = "Order Information"
+  * ^definition = "This section holds information related to the order for the laboratory study."
+  * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+  * ^extension[0].valueString = "Section"
+  * code = $loinc#30954-2 	"Relevant diagnostic tests/laboratory data Narrative"
+  * entry 0..
+  * entry only Reference(CZ_ServiceRequest) 
+* section[serviceRequest].author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or Device or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+
+///////////////////////////////// Clinical question SECTION ///////////////////////////////////////
+* section[clinicalQuestion]
+  * ^short = "Clinical question"
+  * ^definition = "This section holds information about the clinical question that the laboratory method is intended to answer."
+  * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+  * ^extension[0].valueString = "Section"
+  * code = $loinc#42349-1 	"Reason for referral (narrative)"
+  * entry 1..
+  * entry only Reference(CZ_ClinicalQuestion) 
+* section[clinicalQuestion].author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or Device or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
 
 /////////////////////////////////// COVERAGE SECTION ////////////////////////////////////////////
 * section[coverage]
-  * ^short = "ServiceRequest"
-  * entry MS
-    * insert SliceElement( #profile, $this )
-  * entry only Reference(http://hl7.org/fhir/StructureDefinition/Coverage)
+  * ^short = "Coverage type"
+  * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+  * ^extension[0].valueString = "Section"
+  * code = $loinc#87520-3 "Coverage type"
+  * entry 0..
+  * entry only Reference(CZ_Coverage)
+* section[coverage].author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or Device or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
 
 /////////////////////////////////// APPOINTMENT SECTION /////////////////////////////////////////
 * section[appointment]
   * ^short = "Appointment"
-  * entry MS
-    * insert SliceElement( #profile, $this )
-  * entry only Reference(http://hl7.org/fhir/StructureDefinition/Appointment)
+  * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+  * ^extension[0].valueString = "Section"
+  * code = $loinc#56446-8 "Appointment summary Document"
+  * entry 0..
+  * entry only Reference(CZ_Appointment)
+* section[appointment].author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or Device or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+
+
+ /////////////////////////////////////// ATTACHMENTS SECTION /////////////////////////////////////////
+// -------------------------------------------------------------
+* section[attachments]
+  * ^short = "Library of attachments"
+  * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+  * ^extension[0].valueString = "Section"
+  * code = $loinc#77599-9 "Additional documentation"
+  * entry 0..
+  * entry only Reference(CZ_Attachment)
+* section[attachments].author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or Device or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+
+/// ========= INVARIANTS =========
+
+Invariant: text-or-section
+Description: "A Composition SHALL have either text, at least one section, or both."
+Expression: "text.exists() or section.exists()"
+Severity: #error

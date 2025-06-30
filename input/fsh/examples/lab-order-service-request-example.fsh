@@ -1,4 +1,4 @@
-Instance: CZ-LabOrder-ServiceRequest-Example
+/*Instance: CZ-LabOrder-ServiceRequest-Example
 InstanceOf: ServiceRequestCz
 Usage: #example
 Title: "CZ Lab Order Service Request Example"
@@ -13,12 +13,13 @@ Description: "Czech Lab Order - example of a service request"
 * code = $nclppol#B0001 "Glukóza; látková koncentrace; plazma"
 * code.text = "Glukóza v plazmě"
 
-* subject = Reference(Mracena2)
-* requester = Reference(Practitioner-2)
-* specimen[0].reference = "urn:uuid:specimen-1"
+* subject = Reference(Zyrgana)
+* requester = Reference(practitionerRoleVycichlo)
+* specimen[+] = Reference(CZ-LabOrder-Specimen-Example)
 * authoredOn = "2025-04-24"
 
 * text.status = #generated
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Žádanka o laboratorní vyšetření</div>"
 
 * note.text = "Pacient je nalačno."
+*/

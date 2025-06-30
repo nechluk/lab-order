@@ -12,8 +12,7 @@ Description:  """Laboratory Order body data elements"""
 * clinicalEvent 0..1 ClinicalEvent "A.2.3 - Clinical event (encounter)" """Information about the clinical event to which the order relates"""
 * coverage 1..1 Coverage "A.2.4 - Coverage" """Information on how to pay for an examination order"""
 * appointment 0..1 Appointment "A.2.5 - Appointment" """Information about the appointment (if booked)"""
-* attachments 0..1 Attachments "A.2.6 - Attahments" """Information about attached documents"""
-* specimen 0..* SpecimenInformation "A.2.7 - Specimen information" """Information about speciments"""
+* specimen 0..* SpecimenInformation "A.2.6 - Specimen information" """Information about speciments"""
 		
 //--- END				
 //--- END				

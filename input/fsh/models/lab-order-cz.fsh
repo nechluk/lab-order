@@ -9,8 +9,9 @@ Description:  """Laboratory Order."""
 * insert SetFmmandStatusRule( 1, draft)	
 
 * header 1..1 LabOrderHeader "A.1 Laboratory order header data elements" """A.1 Laboratory Order header data elements"""				
-* bodyCommon 1..1 LabOrderBodyCommon "A.2 Laboratory order body data elements" """A.2 Laboratory Order body data elements"""				
-* bodySpecific 1..1 LabOrderBodySpecific "A.3 Laboratory order body data elements" """A.2 Laboratory Order body data elements"""	
+* bodyCommon 1..1 LabOrderBodyCommon "A.2 Laboratory order body data elements" """A.2 Laboratory Order body data elements"""		
+* presentedForm 1..* PresentedFormCz "A.3 - Human-readable Form" """Entire order as issued. Various formats could be provided,  pdf format is prefered."""
+* attachment 0..* LabOrderAttachmentsCz "A.4 - Additional Attachment" """Additional media attachment"""
 
 //--- END				
 //--- END				
