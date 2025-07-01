@@ -1,17 +1,16 @@
-Profile: AppointmentCz
+Profile: CZ_Appointment
 Parent: http://hl7.org/fhir/StructureDefinition/Appointment
-Id: AppointmentCz
+Id: cz-appointment
 Title: "Appointment (CZ)"
 Description: "Czech profile for appointment. "
 
 * insert SetFmmandStatusRule ( 0, draft )
 
-* identifier 1..
-* status MS
+* identifier 0..1
 * status from $hl7AppointmentStatus
-* description 1..
-* created 1..
-* minutesDuration 1..
-* comment 1..
-* patientInstruction 1..
-* participant.actor only Reference(Location)
+* description 1..1
+* created 0..1
+* minutesDuration 0..1
+* comment 0..1
+* patientInstruction 0..1
+* participant.actor only Reference(CZ_LocationCore)
