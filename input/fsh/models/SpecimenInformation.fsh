@@ -19,13 +19,17 @@ Description:  """Information about speciments"""
 * type 0..1 CodeableConcept "A.2.6.6 - Sample type" """Entities collected for examination.
 - Preferred system(s): SNOMED CT"""
 * anatomicLocation 0..1 CodeableConcept "A.2.6.7 - Anatomic location" """Anatomic location (body location, laterality) where the material is collected, e.g. Elbow, left 
-- Preferred system(s): SNOMED CT"""
+- Preferred system(s): SNOMED CT
+- Preferred system(s): NCLPSYST"""
 * morphology 0..1 CodeableConcept "A.2.6.8 - Morphology" """Morphological abnormalities of the anatomical location where the material is taken, for example wound, ulcer. 
-- Preferred system(s): SNOMED CT"""
+- Preferred system(s): SNOMED CT
+- Preferred system(s): NCLPSYST"""
 * instrument 0..1 CodeableConcept "A.2.6.9 - Instrument" """Device, instrument, physical object (drain, electrode, catheter, etc.).
-- Preferred system(s): SNOMED CT"""
+- Preferred system(s): SNOMED CT
+- Preferred system(s): NCLPSYST"""
 * procedure 0..1 CodeableConcept "A.2.6.10 - Collection procedure" """Sampling procedure - for cases where it is relevant to the results.
-- Preferred system(s): SNOMED CT"""
+- Preferred system(s): SNOMED CT
+- Preferred system(s): NCLPSYST"""
 * sourceDevice 0..1 CodeableConcept "A.2.6.11 - Source Device" """If the material is not collected directly from the patient but comes from a patient-related object, e.g. a catheter
  - Preferred system(s): SNOMED CT
  - Preferred system(s): EMDN"""

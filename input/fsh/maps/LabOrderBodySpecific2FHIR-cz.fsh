@@ -106,43 +106,28 @@ Usage: #definition
 * group[=].element[=].target.code = #CZ_ServiceRequest.code.text
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #examination.system
-* group[=].element[=].display = "A.2.8.1.3 - System and specifications"
-* group[=].element[=].target.code = #CZ_ServiceRequest
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #examination.subspecification
-* group[=].element[=].display = "A.2.8.1.4 - Additional subspecification"
-* group[=].element[=].target.code = #CZ_ServiceRequest
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #examination.procedure
-* group[=].element[=].display = "A.2.8.1.5 - Examination procedure"
-* group[=].element[=].target.code = #CZ_ServiceRequest
-* group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #examination.procedureSpecification
-* group[=].element[=].display = "A.2.8.1.6 - Procedure specification"
+* group[=].element[=].display = "A.2.8.1.3 - Examination procedure"
 * group[=].element[=].target.code = #CZ_ServiceRequest
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #examination.accreditation
-* group[=].element[=].display = "A.2.8.1.7 - Accreditation"
+* group[=].element[=].display = "A.2.8.1.4 - Accreditation"
 * group[=].element[=].target.code = #CZ_ServiceRequest.extension[requiresAccreditation]
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #examination.urgency
-* group[=].element[=].display = "A.2.8.1.8 - Urgency"
+* group[=].element[=].display = "A.2.8.1.5 - Urgency"
 * group[=].element[=].target.code = #CZ_ServiceRequest.priority
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #examination.note
-* group[=].element[=].display = "A.2.8.1.9 - Note"
+* group[=].element[=].display = "A.2.8.1.6 - Note"
 * group[=].element[=].target.code = #CZ_ServiceRequest.note
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #examination.clinicalEvent
-* group[=].element[=].display = "A.2.8.1.10 - Clinical event (encounter)"
+* group[=].element[=].display = "A.2.8.1.7 - Clinical event (encounter)"
 * group[=].element[=].target.code = #CZ_ServiceRequest.encounter
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
