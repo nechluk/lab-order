@@ -13,9 +13,9 @@ Description: "Czech Lab Order - example of a bundle"
 * entry[composition].resource = CZ-LabOrder-Composition-Example
 
 * entry[patient].fullUrl = "urn:uuid:11af8e2a-3e10-426e-b80f-4c9f9c7de3c9"
-* entry[patient].resource = patientJakotyc
+* entry[patient].resource = patientVirelan
 * entry[coverage].fullUrl = "urn:uuid:8d08dca4-bf95-4b46-bcb4-e5b127aa2e30"
-* entry[coverage].resource = JakotycInsurance
+* entry[coverage].resource = VirelanInsurance
 
 * entry[organization][+].fullUrl = "urn:uuid:fd0cbd93-d65e-47b2-86c9-792268a2c1ff"
 * entry[organization][=].resource = NemocniceHorniDolni
@@ -27,16 +27,16 @@ Description: "Czech Lab Order - example of a bundle"
 * entry[practitionerRole].resource = practitionerRoleSlofak
 
 * entry[clinicalQuestion].fullUrl = "urn:uuid:3e2c9ab5-fe20-4e52-8bf9-3ff7a384c185"
-* entry[clinicalQuestion].resource = JakotycClinicalQuestion 
+* entry[clinicalQuestion].resource = VirelanClinicalQuestion 
 
 * entry[specimen].fullUrl = "urn:uuid:c2987da2-94cb-4a6c-bedf-2cb0e817b7dc"
-* entry[specimen].resource = JakotycSpecimen
+* entry[specimen].resource = VirelanSpecimen
 
 * entry[serviceRequest].fullUrl = "urn:uuid:eb582e83-9558-4578-b332-f009308699bd"
-* entry[serviceRequest].resource = JakotycServiceRequest
+* entry[serviceRequest].resource = VirelanServiceRequest
 
 * entry[attachment].fullUrl = "urn:uuid:db28059c-64e2-48ab-9c41-ae0331e0e237"
-* entry[attachment].resource = JakotycAttachment
+* entry[attachment].resource = VirelanAttachment
 
 
 Instance: CZ-LabOrder-Composition-Example
@@ -86,10 +86,10 @@ Description: "Example Composition for a Laboratory Order in CZ"
   * text.status = #generated
 
 
-Instance: patientJakotyc
+Instance: patientVirelan
 InstanceOf: CZ_PatientCore
 Usage: #inline
-Description: "Virtuální pacient: Stojan Jakotyc"
+Description: "Virtuální pacient: Stojan Virelan"
 
 * id = "11af8e2a-3e10-426e-b80f-4c9f9c7de3c9"
 
@@ -103,8 +103,8 @@ Description: "Virtuální pacient: Stojan Jakotyc"
 * extension[nationality].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#CZ
 
 * name.use = #usual
-* name.family = "Jakotyc"
-* name.given = "Stojan"
+* name.family = "Drahovín"
+* name.given = "Virelan"
 * name.prefix = "Bc."
 
 * gender = #male
@@ -118,19 +118,20 @@ Description: "Virtuální pacient: Stojan Jakotyc"
 * address[=].line[=].extension[houseNumber].valueString = "99"
 * address[=].city = "Dolejší Lhoty"
 * address[=].postalCode = "99999"
-* address[=].country = "CZ"
+* address[=].country = "Česko"
+  * extension[countryCode].valueCoding = urn:iso:std:iso:3166#CZ "Czechia"
 
 * telecom[+].system = #phone
 * telecom[=].value = "+420777000999"
 * telecom[=].use = #mobile
 
 * telecom[+].system = #email
-* telecom[=].value = "stojan.jakotyc@example.cz"
+* telecom[=].value = "stojan.Virelan@example.cz"
 * telecom[=].use = #home
 
 
 
-Instance: JakotycInsurance
+Instance: VirelanInsurance
 InstanceOf: CZ_Coverage
 Description: "Příklad pojištění"
 Usage: #inline
@@ -200,7 +201,8 @@ Usage: #inline
 * address[=].line = "Masarykova 1"
 * address[=].city = "Horní Dolní"
 * address[=].postalCode = "12345"
-* address[=].country = "CZ"
+* address[=].country = "Česko"
+  * extension[countryCode].valueCoding = urn:iso:std:iso:3166#CZ "Czechia"
 
 
 Instance: pojistovna
@@ -214,7 +216,7 @@ Title: "Organization - Healthcare insurance company"
 * identifier[KP].value = "111"
 
 
-Instance: JakotycClinicalQuestion
+Instance: VirelanClinicalQuestion
 InstanceOf: CZ_ClinicalQuestion
 Usage: #inline
 Title: "CZ Clinical Question Example"
@@ -226,7 +228,7 @@ Description: "Example Clinical Question for Laboratory Order"
 * code.text = "Suspected diabetes mellitus"
 
 
-Instance: JakotycServiceRequest
+Instance: VirelanServiceRequest
 InstanceOf: CZ_ServiceRequest
 Usage: #inline
 Title: "CZ Laboratory Service Request Example"
@@ -253,7 +255,7 @@ Description: "Example of a laboratory ServiceRequest for blood glucose testing"
 * reasonCode.coding[reason].display = "Diabetes mellitus (disorder)"
 
 
-Instance: JakotycSpecimen
+Instance: VirelanSpecimen
 InstanceOf: CZ_SpecimenLab
 Usage: #inline
 Title: "CZ Specimen Example"
@@ -270,7 +272,7 @@ Description: "Example of venous blood specimen for laboratory order"
 
 
 
-Instance: JakotycAttachment
+Instance: VirelanAttachment
 InstanceOf: CZ_Attachment
 Usage: #inline
 Description: "Lab order human readable"

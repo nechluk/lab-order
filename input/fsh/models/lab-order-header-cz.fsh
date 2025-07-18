@@ -15,7 +15,7 @@ Description:  """Laboratory Order header data elements"""
 * requestedPerformer 0..1 RequestedPerformerOrderCz "A.1.6 - Requested performer" """Requested performer (laboratory)."""
 * additionalRecipient 0..* AdditionalRecipient "A.1.7 - Additional recipient" """Additional recipient of produced laboratory report"""
 * documentMetadata 1..1 DocumentMetadataCz "A.1.8 - Document metadata" """Document metadata"""
-* digitalSignature 0..1 DigitalSignatureCz "A.1.9 - Digital signature" """Digital signature"""
+* digitalSignature 1..* DigitalSignatureCz "A.1.9 - Digital signatures" """Digital signatures"""
 		
 //--- END				
 //--- END				
