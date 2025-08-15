@@ -2,11 +2,11 @@ Instance: AttachmentLabOrder2FHIR-cz
 InstanceOf: ConceptMap
 Usage: #definition
 * url = "https://hl7.cz/fhir/lab-order/ConceptMap/AttachmentLabOrder2FHIR-cz"
-* name = "AttachmentImagingOrder2FHIRcz"
+* name = "AttachmentLabOrder2FHIRcz"
 * title = "CZ Attachment Model to this guide Map"
 * status = #draft
 * experimental = true
-* description = """CZ Imaging Order Attachment Model to this guide mapping"""
+* description = """CZ Lab Order Attachment Model to this guide mapping"""
 
 * group[+].source = "https://hl7.cz/fhir/lab-order/StructureDefinition/PresentedFormCz"
 * group[=].target = "https://hl7.cz/fhir/lab-order/StructureDefinition/cz-attachment"

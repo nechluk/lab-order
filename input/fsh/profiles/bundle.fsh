@@ -43,7 +43,7 @@ Description: "Clinical document used to represent a Laboratory Order for the sco
 * signature ^short = "Digital Signature of this order"
 * signature only CZ_Signature
 
-* identifier ^short = "Business identifier for this Imaging order"
+* identifier ^short = "Business identifier for this Lab order"
 * identifier 1..
 * type = #document
 * timestamp 1..
