@@ -89,7 +89,7 @@ Description: "Example Composition for a Laboratory Order in CZ"
 Instance: patientVirelan
 InstanceOf: CZ_PatientCore
 Usage: #inline
-Description: "Virtuální pacient: Stojan Virelan"
+Description: "Virtuální pacient: Drahovín Virelan"
 
 * id = "11af8e2a-3e10-426e-b80f-4c9f9c7de3c9"
 
@@ -126,7 +126,7 @@ Description: "Virtuální pacient: Stojan Virelan"
 * telecom[=].use = #mobile
 
 * telecom[+].system = #email
-* telecom[=].value = "stojan.Virelan@example.cz"
+* telecom[=].value = "drahovin.Virelan@example.cz"
 * telecom[=].use = #home
 
 

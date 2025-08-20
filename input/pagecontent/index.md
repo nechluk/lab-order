@@ -2,9 +2,9 @@
 
 ### Introduction
 
-This implementation guide is based on [FHIR version R4](https://hl7.org/fhir/R4/). Specify a set of rules that will be used for HL7 FHIR to define how to represent Imaging Order in the Czech national context, in line with European eHN guidelines.
+This implementation guide is based on [FHIR version R4](https://hl7.org/fhir/R4/). Specify a set of rules that will be used for HL7 FHIR to define how to represent Laboratory Order in the Czech national context, in line with European eHN guidelines.
 
-Its main objective is to define the content components and the preferred structure to be used to construct a imaging order. The purpose of this standard is to define the representation of the imaging order as a patient's medical record for the purpose of electronic exchange of health information between individuals, healthcare providers and infrastructure in the Czech Republic. 
+Its main objective is to define the content components and the preferred structure to be used to construct a laboratory order. The purpose of this standard is to define the representation of the laboratory order as a patient's medical record for the purpose of electronic exchange of health information between individuals, healthcare providers and infrastructure in the Czech Republic. 
 
 This guide does not describe how to exchange this message.
 
@@ -14,8 +14,8 @@ This guide is divided into several pages which are listed at the top of each pag
 
 - [Home](index.html): This page provides the introduction, scope short, references, dependencies, cross version analysis and IP statement for this guide.
 - Introduction:
-  - [Scope and content](scope-and-content-en.html): This segment contains general information about Imaging order.
-  - [Background](background-en.html): This segment contains background information about Imaging order. 
+  - [Scope and content](scope-and-content-en.html): This segment contains general information about Laboratory order.
+  - [Background](background-en.html): This segment contains background information about Laboratory order. 
 - Functional:
   - [Use cases](use-cases-en.html): This segment contains information about use cases. 
   - [Workflow](workflow-en.html): This segment contains information about workflow. 
