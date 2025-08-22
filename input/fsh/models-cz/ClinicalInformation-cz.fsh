@@ -1,8 +1,8 @@
 // -------------------------------------------------------------------------------				
 //  Logical Model				ClinicalInformation.fsh
 // -------------------------------------------------------------------------------				
-Logical: LabOrderClinicalInformationCz				
-Id: ClinicalInformationCz
+Logical: LogCzLabOrderClinicalInformationCz				
+Id: LogClinicalInformationCz
 Title: "A.2.7 - Clinical information (anamnesis)"				
 Description:  """Information and data communicated to the laboratory affecting the execution of the order or the interpretation of the results"""		
 
