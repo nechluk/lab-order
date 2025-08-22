@@ -7,7 +7,7 @@ Alias: $sct = http://snomed.info/sct
 Alias: $dicomModalityType = http://terminology.hl7.org/CodeSystem/dicomMDLTY
 Alias: $drzar = https://ncez.mzcr.cz/fhir/CodeSystem/cz-drzar
 Alias: $UCUM = http://unitsofmeasure.org
-Alias: $nclp = https://www.dastacr.cz/dasta/hypertext/DSBFV.htm
+Alias: $nclp = https://nclp.ncez.mzcr.cz/CodeSystem/nclppol
 Alias: $mkn-10 = https://mkn10.uzis.cz
 Alias: $hl7-condition-category-cs =  http://terminology.hl7.org/CodeSystem/condition-category
 Alias: $typeClinicalEvent = https://hl7.cz/fhir/lab-order/CodeSystem/cz-typeClinicalEvent-cs
@@ -24,6 +24,7 @@ Alias: $sct-device-type = http://hl7.org/fhir/ValueSet/device-type
 Alias: $FHIRDocumentTypeCodes = http://hl7.org/fhir/ValueSet/doc-typecodes
 Alias: $DocumentClassValueSet = http://hl7.org/fhir/ValueSet/document-classcodes
 Alias: $hl7-clinicalFindings = http://hl7.org/fhir/ValueSet/clinical-findings
+Alias: $nclp-vs = https://nclp.ncez.mzcr.cz/ValuSet/nclppol
 
 // Extensions:
 Alias: $hl7Supportinginfo = http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo

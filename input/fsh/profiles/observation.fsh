@@ -16,7 +16,7 @@ Description: "Observation for Laboratory Order for the scope of the Czech nation
     LOINC 0..1 and
     SNOMEDCT 0..1 and
     NCLP 0..1
-* code.coding[LOINC] 
+* code.coding[LOINC]
   * ^short = "LOINC code for the observation"
   * system 1..
   * system = "http://loinc.org" (exactly)
@@ -29,7 +29,7 @@ Description: "Observation for Laboratory Order for the scope of the Czech nation
 * code.coding[NCLP]
   * ^short = "NCLP code for the observation"
   * system 1..
-  * system = "https://www.dastacr.cz/dasta/hypertext/DSBFV.htm" (exactly)
+  * system = $nclp (exactly)
   * code 1..
 * valueQuantity
 * valueCodeableConcept
