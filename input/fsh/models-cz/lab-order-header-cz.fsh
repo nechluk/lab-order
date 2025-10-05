@@ -3,19 +3,19 @@
 // -------------------------------------------------------------------------------				
 Logical: LogCzLabOrderHeaderCz				
 Id: LogLabOrderHeaderCz		
-Title: "A.1 Laboratory Order header data elements"				
-Description:  """Laboratory Order header data elements"""		
+Title: "A.1 - Hlavička dokumentu"
+Description: """Záhlaví dokumentu s administrativními údaji"""
 
 * insert SetFmmandStatusRule( 1, draft)	
 
-* subject 1..1 LogSubjectCz "A.1.1 - Identification and A.1.2 - related contact information of the Patient/subject" """Identification of the patient/subject and Patient/subject related contact information"""
-* payer 1..1 LogPayerCz "A.1.3 - Health insurance and payment information - Health insurance information is not always required, however, in some jurisdictions, the insurance number is also used as the patient identifier. It is necessary not just for identification but also forms access to funding for care." """Health insurance and payment information - Health insurance information is not always required, however, in some jurisdictions, the insurance number is also used as the patient identifier. It is necessary not just for identification but also forms access to funding for care."""
-* coverage 1..1 LogCoverageOrderCz "A.1.4 - Information about coverage - the default value will be the patient's insurance company" """Coverage information - Information about method of coverage, payer identification data and additional information"""
-* author 1..* LogAuthorCz "A.1.5 - Author (who requested the order). Multiple authors could be provided." """Author (who requested the order). Multiple authors could be provided."""
-* requestedPerformer 0..1 LogRequestedPerformerCz "A.1.6 - Requested performer" """Requested performer (laboratory)."""
-* additionalRecipient 0..* LogAdditionalRecipientCz "A.1.7 - Additional recipient" """Additional recipient of produced laboratory report"""
-* documentMetadata 1..1 LogDocumentMetadataCz "A.1.8 - Document metadata" """Document metadata"""
-* digitalSignature 1..* LogDigitalSignatureCz "A.1.9 - Digital signatures" """Digital signatures"""
+* subjekt 1..1 LogSubjectCz "A.1.1 - Identifikace pacienta and A.1.2 Kontaktní informace pacienta/subjektu" """Identifikace pacienta/subjektu a jeho kontaktních informací"""
+* zdravotniPojisteni 0..1 LogPayerCz "A.1.3 - Zdravotní pojištění" """Informace o zdravotním pojištění."""
+* uhrada 1..1 LogCoverageOrderCz "A.1.4 - Úhrada" """Informace o způsobu úhrady objednávky vyšetření."""
+* objednatel 1..* LogAuthorCz "A.1.5 - Objednatel" """Objednatel provedení zdravotní služby."""
+* zpracovatel 0..1 LogRequestedPerformerCz "A.1.6 - Zpracovatel" """Předpokládaný zpracovatel žádanky (u neadresné žádanky nebude zpracovatel uveden)."""
+* dodatecniPrijemci 0..* LogAdditionalRecipientCz "A.1.7 - Příjemce nálezu" """Dodateční příjemci nálezu kromě objednatele"""
+* metadataDokumentu 1..1 LogDocumentMetadataCz "A.1.8 - Metadata dokumentu" """Dokument metadata"""
+* elektronickyPodpis 1..* LogDigitalSignatureCz "A.1.9 - Elektronické podpisy" """Elektronické podpisy dle zákona 327/2011 §54a"""
 		
 //--- END				
 //--- END				

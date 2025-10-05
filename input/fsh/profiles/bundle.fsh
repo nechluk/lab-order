@@ -3,9 +3,25 @@
 //===================================
 
 Invariant: one-comp
-Description: "A laboratory order bundle SHALL include one and only one Composition"
+Description: "A imaging order bundle SHALL include one and only one Composition"
 Expression: "entry.resource.ofType(Composition).count() = 1"
 Severity:    #error
+
+Invariant: same-servicerequest-performer
+Description: "Service requests SHALL have the same performer."
+Expression: "entry.resource.ofType(ServiceRequest).contained.all($this.performer = entry.resource.ofType(ServiceRequest).performer)"
+Severity: #warning
+
+Invariant: same-servicerequest-occurrence
+Description: "Service requests SHALL have the same occurrence (dateTime or period)."
+Expression: "entry.resource.ofType(ServiceRequest).contained.all($this.occurrence = entry.resource.ofType(ServiceRequest).occurrence)"
+Severity: #warning
+
+Invariant: coverage-author
+Description: "If coverage is an insurance company than the author must have filled organization.identifier and specialty."
+Expression: "entry.resource.ofType(Coverage).payor.resolve().ofType(Organization).identifier.where($this.system = 'https://ncez.mzcr.cz/fhir/sid/kp') implies (entry.resource.ofType(Composition).author.resolve().ofType(PractitionerRole).specialty.exists() and entry.resource.ofType(Composition).author.resolve().ofType(PractitionerRole).organization.resolve().ofType(Organization).identifier.where($this.system = 'https://ncez.mzcr.cz/fhir/sid/icp'))"
+Severity: #error
+
 
 //==========================
 // PROFILE
@@ -25,6 +41,9 @@ Description: "Clinical document used to represent a Laboratory Order for the sco
 
 //* obeys dr-comp-subj
 * obeys one-comp
+* obeys same-servicerequest-performer
+* obeys same-servicerequest-occurrence
+* obeys coverage-author
 //* obeys one-dr
 
 * identifier ^short = "Business identifier for this Laboratory order"

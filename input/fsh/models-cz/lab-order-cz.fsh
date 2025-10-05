@@ -3,15 +3,15 @@
 // -------------------------------------------------------------------------------				
 Logical: LogCzLabOrderCz				
 Id: LogLabOrderCz			
-Title: "A - Laboratory Order"				
-Description:  """Laboratory Order."""		
+Title: "A - Laboratorní žádanka"				
+Description:  """Laboratorní žádanka."""		
 
 * insert SetFmmandStatusRule( 1, draft)	
 
-* header 1..1 LogLabOrderHeaderCz "A.1 Laboratory order header data elements" """A.1 Laboratory Order header data elements"""				
-* body 0..1 LogLabOrderBodyCz "A.2 Laboratory order body data elements" """A.2 Laboratory Order body data elements"""		
-* presentedForm 1..* LogPresentedFormCz "A.3 - Human-readable Form" """Entire order as issued. Various formats could be provided,  pdf format is prefered."""
-* attachment 0..* LogAttachmentsCz "A.4 - Additional Attachment" """Additional media attachment"""
+* hlavicka 1..1 LogLabOrderHeaderCz "A.1 -  Hlavička žádanky laboratorního vyšetření" """ Hlavička žádanky laboratorního vyšetření"""
+* telo 0..1 LogLabOrderBodyCz "A.2 a A.3 - Tělo žádanky laboratorního vyšetření" """Tělo žádanky laboratorního vyšetření"""
+* presentacniForma 1..* PresentedFormCz "A.4 - Vizuální podoba dokumentu" """Žádanka laboratorního vyšetření čitelná lidským okem,  je požadován PDF formát."""
+* prilohy 0..* AttachmentsCz "A.5 - Přílohy" """Ostatní přílohy"""
 
 //--- END				
 //--- END				

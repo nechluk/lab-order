@@ -49,6 +49,19 @@ Description: "Clinical document used to represent a Laboratory Order for the sco
 
 * category from $DocumentClassValueSet
 
+* extension contains DocumentPresentedForm named presentedForm 0..*
+* extension[presentedForm] ^short = "Presented form"
+* extension[presentedForm].valueAttachment
+  * contentType
+    * ^example[0].label = "pdf"
+    * ^example[0].valueCode  = $mime#application/pdf
+  * data ^short = "B64 in-line data"
+  * url ^short = "URL of the document"
+
+* extension contains
+    $information-recipient-url  named informationRecipient 0..*
+* extension[informationRecipient].valueReference only Reference(CZ_PractitionerCore or CZ_DeviceObserver or CZ_PatientCore or CZ_RelatedPersonCore or CZ_PractitionerRoleCore or CZ_OrganizationCore)
+
 * section 1..
 * obeys text-or-section
 
@@ -66,6 +79,7 @@ Description: "Clinical document used to represent a Laboratory Order for the sco
     clinicalQuestion 1..* and
     coverage 0..* and
     appointment 0..1 and
+    supportingInformation 0..1 and
     attachments 0..*
 
 ///////////////////////////////// ORDER INFORMATION SECTION ///////////////////////////////////////
@@ -109,6 +123,15 @@ Description: "Clinical document used to represent a Laboratory Order for the sco
   * entry 0..
   * entry only Reference(CZ_Appointment)
 * section[appointment].author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or Device or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
+
+ /////////////////////////////////// SUPPORTING INFORMATION SECTION /////////////////////////////////////////
+* section[supportingInformation]
+  * ^short = "Supporting information"
+  * ^extension[0].url = "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name"
+  * ^extension[0].valueString = "Section"
+  * code = $loinc#55752-0 "Clinical information"
+  * entry 0..
+  * entry only Reference(CZ_MedicationStatement or Condition)
 
 
  /////////////////////////////////////// ATTACHMENTS SECTION /////////////////////////////////////////

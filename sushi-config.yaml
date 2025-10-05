@@ -40,6 +40,8 @@ dependencies:
 
   hl7.fhir.cz.core: current
   hl7.fhir.eu.base: current 
+  hl7.fhir.extensions.r5: 4.0.1
+  hl7.fhir.eu.extensions: 0.1.1-ballot
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -337,6 +339,7 @@ groups:
       - StructureDefinition/LogAuthorCz
       - StructureDefinition/LogClinicalEventCz
       - StructureDefinition/LogClinicalInformationCz
+      - StructureDefinition/LogCoverageBodyCz
       - StructureDefinition/LogCoverageOrderCz
       - StructureDefinition/LogDigitalSignatureCz
       - StructureDefinition/LogDocumentMetadataCz

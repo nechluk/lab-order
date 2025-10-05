@@ -3,32 +3,33 @@
 // -------------------------------------------------------------------------------				
 Logical: LogCzLabOrderClinicalInformationCz				
 Id: LogClinicalInformationCz
-Title: "A.2.7 - Clinical information (anamnesis)"				
-Description:  """Information and data communicated to the laboratory affecting the execution of the order or the interpretation of the results"""		
+Title: "A.2.7 - Klinické informace (anamnéza)"				
+Description:  """Informace a údaje sdělované laboratoři, mající vliv na provedení objednávky či interpretaci výsledků"""		
 
 * insert SetFmmandStatusRule( 1, draft)	
 
-* clinicalInfoText 0..1 string "A.2.7.1 - Clinical information in free text" """Clinical information necessary for proper ordering or interpretation of results."""
-* clinicalInfoFormalized 0..1 CodeableConcept "A.2.7.2 - Clinical information (medical history) formalized" """Clinical information (medical history) formalized"""
-* description 0..* CodeableConcept "A.2.7.3 - Description of the problem/diagnosis/condition" """Diagnosis and other clinical information affecting the course or outcome of the examination.
-- Preferred system(s): MKN-10
-- Preferred system(s): Orphacode"""
-* medication 0..* CodeableConcept "A.2.7.4 - Medications" """A medication block containing information about medications that affect the course or result of the test or its interpretation.
-- Preferred system(s): DLP
-- Preferred system(s): ATC"""
-* vaccination 0..* CodeableConcept "A.2.7.5 - Vaccinations" """Vaccinations"""
-* finding 0..* CodeableConcept "A.2.7.6 - Physical findings" """Physical examination of the patient (systolic and diastolic blood pressure, heart rate, saturation, respiratory rate, current body temperature)"""
+* klinickeInformaceText 0..1 string "A.2.7.1 - Klinické informace volným textem" """Klinické informace nezbytné pro správné provedení objednávky či interpretaci výsledků."""
+* klinickeInformaceKod 0..1 CodeableConcept "A.2.7.2 - Klinické informace (anamnéza) formalizovaná" """Klinické informace (anamnéza) formalizovaná"""
+* popis 0..* CodeableConcept "A.2.7.3 - Popis problému / diagnózy / stavu" """Diagnózy a dalších klinických informací mající vliv na průběh či výsledek vyšetření.
+- Preferované systémy: MKN-10
+- Preferované systémy: Orphacode"""
+* medikace 0..* CodeableConcept "A.2.7.4 - Medikace" """Blok medikace obsahující informace o medikaci mající vliv na průběh či výsledek vyšetření či jeho interpretaci.
+- Preferované systémy: DLP
+- Preferované systémy: ATC"""
+* ockovani 0..* CodeableConcept "A.2.7.5 - Očkování" """Očkování"""
+* nalez 0..* CodeableConcept "A.2.7.6 - Fyzikální nález" """Fyzikální vyšetření pacienta (systolický a diastolický tlak, srdeční frekvence, saturace, dechová frekvence, aktuální telesná teplota)"""
+* datumHospitalizace 0..* dateTime "A.2.7.7 - Date of hospitalization" """Date of patient hospitalization"""
 
-* urgentInformation 0..1 Base "A.2.7.7 - Urgent information" """Urgent information block in the same structure as other document types (discharge report, patient summary)"""
-* urgentInformation.allergies 1..* CodeableConcept "A.2.7.7.1 - Allergies and intolerances" """Allergies and intolerances that may affect order execution or interpretation of results"""
-* urgentInformation.warnings 0..* string "A.2.7.7.2 - Warnings" """Warnings and cautions that may affect order execution or interpretation of results"""
+* urgentniInformace 0..1 Base "A.2.7.8 - Urgentní informace" """Blok urgentní inforace ve stejné strukruře jako v ostatních typech dokumentů (propouštěcí zpráva, pacientský souhrn)"""
+* urgentniInformace.alergie 1..* CodeableConcept "A.2.7.8.1 - Alergie a intolerance" """Alergie a intolerance, které mohou vlivnit realizaci objednávky či interpretaci výsledků"""
+* urgentniInformace.varovani 0..* string "A.2.7.8.2 - Varování" """Varování a upozornění, která mohou vlivnit realizaci objednávky či interpretaci výsledků"""
 
-* additionalData 0..1 Base "A.2.7.8 - Additional formalised data" """"""
-* additionalData.date 0..1 date "A.2.7.8.1 - Date" """Date of discovery of the data, to be indicated if different from the date of the order."""
-* additionalData.code 1..1 CodeableConcept "A.2.7.8.2 - Code" """Observation code identifying the significance of the data (height, weight, week of gestation, etc.)
-- Preferred system(s): NČLP
-- Preferred system(s): SNOMED CT"""
-* additionalData.value 0..1 Narrative "A.2.7.8.3 - Data value" """Data value including unit of measurement."""
+* dalsiUdaje 0..1 Base "A.2.7.9 - Další formalizované údaje" """"""
+* dalsiUdaje.datum 0..1 dateTime "A.2.7.9.1 - Datum" """DDatum zjištění údaje, uvádí se, pokud je odlišné od data vystavení objednávky."""
+* dalsiUdaje.kod 1..1 CodeableConcept "A.2.7.9.2 - Kód" """Kód pozorování identifikující význam údaje (výška, váha, týden gravidity a pod.)
+- Preferované systémy: NČLP
+- Preferované systémy: SNOMED CT"""
+* dalsiUdaje.hodnota 0..1 Narrative "A.2.7.9.3 - Hodnota" """Hodnota údaje včetně jednotky měření."""
 		
 //--- END				
 //--- END				
