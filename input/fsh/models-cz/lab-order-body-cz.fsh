@@ -3,21 +3,21 @@
 // -------------------------------------------------------------------------------				
 Logical: LogCzLabOrderBodyCz				
 Id: LogLabOrderBodyCz
-Title: "A.2 Laboratory Order body data elements"				
-Description:  """Laboratory Order body data elements"""		
+Title: "A.2 Tělo dokumentu"				
+Description:  """Tělo dokumentu"""		
 
 * insert SetFmmandStatusRule( 1, draft)	
 
 // common
-* order 0..* LogLabOrderInformationCz "A.2.1 - Order information and A.2.2 - Order reason" """The laboratory report may correspond to multiple orders"""
-* clinicalEvent 0..1 LogClinicalEventCz "A.2.3 - Clinical event (encounter)" """Information about the clinical event to which the order relates"""
-* coverage 1..1 LogCoverageOrderCz "A.2.4 - Coverage" """Information on how to pay for an examination order"""
-* appointment 0..1 LogLabAppointmentCz "A.2.5 - Appointment" """Information about the appointment (if booked)"""
-* specimen 0..* LogSpecimenInformationCz "A.2.6 - Specimen information" """Information about speciments"""
+* objednavka 0..* LogLabOrderInformationCz "A.2.1 - Informace o objednávce a A.2.2 - Důvod objednávky" """Výsledková listina může odpovídat více objednávkám"""
+* klinickaUdalost 0..1 LogClinicalEventCz "A.2.3 - Klinická událost (encounter)" """Informace o klinické události, ke které se objednávka vztahuje"""
+* uhrada 1..1 LogCoverageOrderCz "A.2.4 - Úhrada" """Informace o způsobu úhrady objednávky vyšetření"""
+* terminNavstevy 0..1 LogLabAppointmentCz "A.2.5 - Termín návštěvy" """Informace o objednaném termínu vyšetření (pokud byl termín rezervován)"""
+* vzorek 0..* LogSpecimenInformationCz "A.2.6 - Informace o vzorku" """Informace o vzorku"""
 
 // specific
-* clinicalInformation 0..1 LogClinicalInformationCz "A.2.7 - Clinical information (anamnesis)" """Information and data communicated to the laboratory affecting the execution of the order or the interpretation of the results"""
-* dataElements 1..1 LogLabOrderDataElementsCz "A.2.8 - Laboratory order data elements" """Laboratory order data elements"""
+* klinickeInformace 0..1 LogClinicalInformationCz "A.2.7 - Klinické informace (anamnéza)" """Informace a údaje sdělované laboratoři, mající vliv na provedení objednávky či interpretaci výsledků"""
+* datoveElementy 1..1 LogLabOrderDataElementsCz "A.2.8 - Datové elementy objednávky vyšetření" """Datové elementy objednávky vyšetření"""
 		
 //--- END				
 //--- END				

@@ -18,17 +18,18 @@ Description:  """Information and data communicated to the laboratory affecting t
 - Preferred system(s): ATC"""
 * vaccination 0..* CodeableConcept "A.2.7.5 - Vaccinations" """Vaccinations"""
 * finding 0..* CodeableConcept "A.2.7.6 - Physical findings" """Physical examination of the patient (systolic and diastolic blood pressure, heart rate, saturation, respiratory rate, current body temperature)"""
+* hospitalizationDate 0..* dateTime "A.2.7.7 - Date of hospitalization" """Date of patient hospitalization"""
 
-* urgentInformation 0..1 Base "A.2.7.7 - Urgent information" """Urgent information block in the same structure as other document types (discharge report, patient summary)"""
-* urgentInformation.allergies 1..* CodeableConcept "A.2.7.7.1 - Allergies and intolerances" """Allergies and intolerances that may affect order execution or interpretation of results"""
-* urgentInformation.warnings 0..* string "A.2.7.7.2 - Warnings" """Warnings and cautions that may affect order execution or interpretation of results"""
+* urgentInformation 0..1 Base "A.2.7.8 - Urgent information" """Urgent information block in the same structure as other document types (discharge report, patient summary)"""
+* urgentInformation.allergies 1..* CodeableConcept "A.2.7.8.1 - Allergies and intolerances" """Allergies and intolerances that may affect order execution or interpretation of results"""
+* urgentInformation.warnings 0..* string "A.2.7.8.2 - Warnings" """Warnings and cautions that may affect order execution or interpretation of results"""
 
-* additionalData 0..1 Base "A.2.7.8 - Additional formalised data" """"""
-* additionalData.date 0..1 date "A.2.7.8.1 - Date" """Date of discovery of the data, to be indicated if different from the date of the order."""
-* additionalData.code 1..1 CodeableConcept "A.2.7.8.2 - Code" """Observation code identifying the significance of the data (height, weight, week of gestation, etc.)
+* additionalData 0..1 Base "A.2.7.9 - Additional formalised data" """"""
+* additionalData.date 0..1 date "A.2.7.9.1 - Date" """Date of discovery of the data, to be indicated if different from the date of the order."""
+* additionalData.code 1..1 CodeableConcept "A.2.7.9.2 - Code" """Observation code identifying the significance of the data (height, weight, week of gestation, etc.)
 - Preferred system(s): NČLP
 - Preferred system(s): SNOMED CT"""
-* additionalData.value 0..1 Narrative "A.2.7.8.3 - Data value" """Data value including unit of measurement."""
+* additionalData.value 0..1 Narrative "A.2.7.9.3 - Data value" """Data value including unit of measurement."""
 		
 //--- END				
 //--- END				

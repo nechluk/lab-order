@@ -1,5 +1,5 @@
-Extension: RequiresAccreditationCz
-Id: requires-accreditation-cz
+Extension: AccreditationCz
+Id: accreditation-cz
 Title: "Požadavek na akreditaci"
 Description: "Vyšetření má být provedeno pouze laboratoří, která má akreditaci pro dané vyšetření."
 

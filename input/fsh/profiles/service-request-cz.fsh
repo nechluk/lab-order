@@ -32,12 +32,12 @@ Description: "ServiceRequest used to represent a Laboratory Order for the scope 
 * reasonCode.coding contains 
     diagnosis 0..1 and 
     reason 0..1 
-* reasonCode.coding[diagnosis] from $mkn-10-problem-list (preferred)
+* reasonCode.coding[diagnosis] from $mkn10vs (preferred)
 * reasonCode.coding[diagnosis].system = $mkn-10 
 * reasonCode.coding[reason] from $sct-condition-code (preferred)
 * reasonCode.coding[reason].system = "http://snomed.info/sct" (exactly)
 
-* extension contains RequiresAccreditationCz named requiresAccreditation 0..1
-* extension[requiresAccreditation] ^short = "Požadavek na akreditaci laboratoře"
+* extension contains AccreditationCz named accreditation 0..1
+* extension[accreditation] ^short = "Request to use an accredited method"
 
 * locationReference only Reference(CZ_LocationCore)
