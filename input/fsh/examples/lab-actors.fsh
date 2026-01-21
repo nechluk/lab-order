@@ -123,7 +123,7 @@ Description: "Role MUDr. Erazima Vyčichla (žádající lékař)"
 * id = "99988877-aaaa-4000-bbbb-cceeddccbbaa"
 * practitioner = Reference(practitionerVycichlo)
 * organization = Reference(NemocniceZlabekDolni)
-* code[NRZP_POVOLANI] = https://ncez.mzcr.cz/fhir/CodeSystem/nrzp-povolani#L00 "Lékař"
+* code[NRZP_POVOLANI] = https://ncez.mzcr.cz/terminology/CodeSystem/nrzp-povolani#L00 "Lékař"
 * active = true
 * telecom[+].system = #email
 * telecom[=].value = "erazim.vycichlo@zlabekdolni.cz"
@@ -150,7 +150,7 @@ Description: "Role Mgr. Kvildy Šejdlové (provádějící laborant)"
 * id = "aabbccdd-2222-3333-dddd-112233445566"
 * practitioner = Reference(practitionerSejdlova)
 * organization = Reference(NemocniceZlabekDolni) // Nemocnice Horní Dolní (laboratoř)
-* code[NRZP_POVOLANI] = https://ncez.mzcr.cz/fhir/CodeSystem/nrzp-povolani#NL25 "Odborný pracovník v laboratorních metodách a v přípravě léčivých přípravků"
+* code[NRZP_POVOLANI] = https://ncez.mzcr.cz/terminology/CodeSystem/nrzp-povolani#NL25 "Odborný pracovník v laboratorních metodách a v přípravě léčivých přípravků"
 * active = true
 * telecom[+].system = #email
 * telecom[=].value = "kvilda.sejdlova@horni-dolni.eu"
